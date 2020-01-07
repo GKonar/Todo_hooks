@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -21,7 +21,7 @@ function Todo({ id, task, completed, removeTodo, toggleTodo, editTodo }) {
           editTodo={editTodo} 
           id={id} task={task} 
           toggleEditForm={toggle}/> : (
-        <>
+        <Fragment>
           <Checkbox tabIndex={-1} checked={completed} onClick={() => toggleTodo(id)}/>
           <ListItemText style={{textDecoration: completed ? "line-through" : "none"}}>
             {task}
@@ -34,9 +34,8 @@ function Todo({ id, task, completed, removeTodo, toggleTodo, editTodo }) {
               <EditIcon />
             </IconButton>  
           </ListItemSecondaryAction>
-        </>
+        </Fragment>
       )}
-      
     </ListItem>
   );
 };
