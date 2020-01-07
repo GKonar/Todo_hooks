@@ -19,6 +19,7 @@ function EditTodoForm({ id, editTodo, task, toggleEditForm }) {
         margin="normal" 
         value={value} 
         onChange={handleChange} 
+        autoFocus
       />
     </form>
   );

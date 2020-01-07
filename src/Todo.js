@@ -15,8 +15,12 @@ function Todo({ id, task, completed, removeTodo, toggleTodo, editTodo }) {
   const [ isEditing, toggle ] = useToggleState(false);
 
   return (
-    <ListItem>
-      {isEditing ? <EditTodoForm  editTodo={editTodo} id={id} task={task} toggleEditForm={toggle}/> : (
+    <ListItem style={{height: "64px"}}>
+      {isEditing ? 
+        <EditTodoForm  
+          editTodo={editTodo} 
+          id={id} task={task} 
+          toggleEditForm={toggle}/> : (
         <>
           <Checkbox tabIndex={-1} checked={completed} onClick={() => toggleTodo(id)}/>
           <ListItemText style={{textDecoration: completed ? "line-through" : "none"}}>
