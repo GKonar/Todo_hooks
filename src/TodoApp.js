@@ -10,9 +10,9 @@ import TodoForm from './TodoForm';
 
 function TodoApp() {
   const initialTodos = [
-    { id: 1, task: "Clean fishtank", coompleted: false },
-    { id: 2, task: "Wash car", coompleted: true },
-    { id: 3, task: "Grow mustache", coompleted: false },
+    { id: 1, task: "Clean fishtank", completed: false },
+    { id: 2, task: "Wash car", completed: true },
+    { id: 3, task: "Grow mustache", completed: false },
   ];
   const [ todos, setTodos ] = useState(initialTodos)
   const addTodo = newTodoText => {
