@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useTodoState from './hooks/useTodoState';
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
@@ -10,12 +10,8 @@ import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 
 function TodoApp() {
-  const initialTodos = JSON.parse(window.localStorage.getItem('todos')) || "[]";
+  const initialTodos = [{ id: 1, task: "Pet the dog", completed: false }]
   const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos); // extract all things this component need from hook 
-
-  useEffect(() => {
-    window.localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
 
   return (
     <Paper
