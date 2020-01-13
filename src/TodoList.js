@@ -27,7 +27,6 @@ function TodoList({todos, removeTodo, toggleTodo, editTodo}) {
   } else {
     return null
   }
-    
 }
 
 export default TodoList;
